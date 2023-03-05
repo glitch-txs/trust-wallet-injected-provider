@@ -24,6 +24,24 @@ const Trust = () => {
       }
 
       setInjectedProvider(trustWallet);
+
+      trustWallet.addListener("chainChanged",(e: any)=>{
+        setChainId(e)
+        console.log(e)
+      } );
+
+      trustWallet.addListener("accountsChanged", (accounts: string[]) => {
+        console.log(accounts)
+        if (accounts.length === 0) {
+          setConnected(false);
+          setSelectedAccount("");
+          setChainId("");
+        } else {
+          const connectedAccount = accounts[0];
+          setSelectedAccount(connectedAccount);
+        }
+      });
+
       setInitializing(false);
     };
 
@@ -44,22 +62,6 @@ const Trust = () => {
       setChainId(chainId);
       setConnected(true);
 
-      injectedProvider.addListener("chainChanged",(e: any)=>{
-        setChainId(e)
-        console.log(e)
-      } );
-
-      injectedProvider.addListener("accountsChanged", (accounts: string[]) => {
-        console.log(accounts)
-        if (accounts.length === 0) {
-          setConnected(false);
-          setSelectedAccount("");
-          setChainId("");
-        } else {
-          const connectedAccount = accounts[0];
-          setSelectedAccount(connectedAccount);
-        }
-      });
     } catch (e: any) {
       console.error(e);
       if (e.code === 4001) {
