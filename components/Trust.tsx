@@ -1,4 +1,4 @@
-import { getTrustWalletInjectedProvider } from "@/actions/getTrustProvider";
+import { getTrustWalletInjectedProvider } from "@/actions/helpers/getTrustProvider";
 import React from "react";
 
 // This is the same implementation presented in the previous sections.
@@ -44,7 +44,10 @@ const Trust = () => {
       setChainId(chainId);
       setConnected(true);
 
-      injectedProvider.addListener("chainChanged", setChainId);
+      injectedProvider.addListener("chainChanged",(e: any)=>{
+        setChainId(e)
+        console.log(e)
+      } );
 
       injectedProvider.addListener("accountsChanged", (accounts: string[]) => {
         if (accounts.length === 0) {
