@@ -58,6 +58,7 @@ const Trust = () => {
           const connectedAccount = accounts[0];
           setSelectedAccount(connectedAccount);
         }
+        console.log(accounts)
       });
     } catch (e: any) {
       console.error(e);
