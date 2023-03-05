@@ -1,3 +1,10 @@
+declare global{
+  interface Window {
+    ethereum?: any;
+    trustwallet?: any
+  }
+}
+
 export async function getTrustWalletInjectedProvider(
     { timeout } = { timeout: 3000 }
   ) {

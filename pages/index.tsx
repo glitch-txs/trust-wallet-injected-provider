@@ -12,6 +12,9 @@ export default function Home() {
       </Head>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column', gap:'30px' }} >
       <Trust/>
+      <button onClick={()=> window.open()} >
+        Deep Link
+      </button>
       </div>
     </>
   )
