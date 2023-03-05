@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column', gap:'30px' }} >
       <Trust/>
-      <button onClick={()=> window.open()} >
+      <button onClick={()=> window.open("https://link.trustwallet.com/open_url?https://trust-wallet-injected-provider.vercel.app/")} >
         Deep Link
       </button>
       </div>
