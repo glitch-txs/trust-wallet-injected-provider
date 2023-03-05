@@ -1,3 +1,4 @@
+import CallContract from '@/components/callContract/CallContract'
 import Trust from '@/components/Trust'
 import Head from 'next/head'
 
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column', gap:'30px' }} >
       <Trust/>
+      <CallContract/>
       <button onClick={()=> window.open("https://link.trustwallet.com/open_url?coin_id=60&url=https://trust-wallet-injected-provider.vercel.app/")} >
         Deep Link
       </button>
