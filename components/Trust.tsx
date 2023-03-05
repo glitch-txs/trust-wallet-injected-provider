@@ -50,6 +50,7 @@ const Trust = () => {
       } );
 
       injectedProvider.addListener("accountsChanged", (accounts: string[]) => {
+        console.log(accounts)
         if (accounts.length === 0) {
           setConnected(false);
           setSelectedAccount("");
@@ -58,7 +59,6 @@ const Trust = () => {
           const connectedAccount = accounts[0];
           setSelectedAccount(connectedAccount);
         }
-        console.log(accounts)
       });
     } catch (e: any) {
       console.error(e);
