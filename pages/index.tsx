@@ -1,3 +1,4 @@
+import Trust from '@/components/Trust'
 import Head from 'next/head'
 
 export default function Home() {
@@ -10,10 +11,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column', gap:'30px' }} >
-      <button>
-        Connect
-      </button>
-    </div>
+      <Trust/>
+      </div>
     </>
   )
 }
